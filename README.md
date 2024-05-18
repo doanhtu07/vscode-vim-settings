@@ -10,7 +10,7 @@ My goal is to keep it as simple as possible, so we can stick with Vim Motions fo
 
 - `` keybindings.json ``: This is for `Preferences: Open Keyboard Shortcuts (JSON)`
 
-# VSCode Shortcuts for Terminals
+## VSCode Shortcuts for Terminals
 
 - `` Ctrl + ` ``: Open terminal (**Default**)
 
@@ -26,13 +26,13 @@ My goal is to keep it as simple as possible, so we can stick with Vim Motions fo
 
     - Cmd does not exist on Windows, so you might need to be cautious here and see what VSCode on Windows assigns
 
-# VSCode Shortcuts on Tabs
+## VSCode Shortcuts on Tabs
 
 - `` Cmd + Shift + [ `` or `` Cmd + Shift + ] ``: Navigate between opened tabs (**Default**)
 
 - `` Ctrl + Tab `` or `` Ctrl + Shift + Tab ``: Navigate virtually between opened tabs (**Default**)
 
-# VSCode Shortcuts for Editor and Explorer
+## VSCode Shortcuts for Editor and Explorer
 
 - `` Cmd + Shift + e ``: Switch focus among Editor and Explorer
 
