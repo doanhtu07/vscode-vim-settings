@@ -12,6 +12,8 @@ My goal is to keep it as simple as possible, so we can stick with Vim Motions fo
 - `` settings.json ``: This is for `Preferences: Open User Settings (JSON)` 
 
     - **NOTE**: settings.json inside .vscode is just for me to format my repo, not relevant to our Vim settings
+ 
+    - You can search for this setting by using `` Cmd + Shift + P ``
 
 - `` keybindings.json ``: This is for `Preferences: Open Keyboard Shortcuts (JSON)`
 
