@@ -4,11 +4,11 @@ This is the repo for my collections of useful Vim shortcuts and bindings for VSC
 
 My goal is to keep it as simple as possible, so we can stick with Vim Motions for the most part.
 
-- settings.json: This is for `Preferences: Open User Settings (JSON)` 
+- `` settings.json ``: This is for `Preferences: Open User Settings (JSON)` 
 
-    - NOTE: settings.json inside .vscode is just for me to format my repo, not relevant to our Vim settings
+    - **NOTE**: settings.json inside .vscode is just for me to format my repo, not relevant to our Vim settings
 
-- keybindings.json: This is for `Preferences: Open Keyboard Shortcuts (JSON)`
+- `` keybindings.json ``: This is for `Preferences: Open Keyboard Shortcuts (JSON)`
 
 # VSCode Shortcuts for Terminals
 
@@ -22,7 +22,9 @@ My goal is to keep it as simple as possible, so we can stick with Vim Motions fo
 
     - Search for `Terminal: Kill the Active Terminal Instance` and set the shortcut yourself
 
-- `` Cmd + Shift + [ or ] ``: Navigate between terminals (**Default**)
+- `` Cmd + Shift + [ `` or `` Cmd + Shift + ] ``: Navigate between terminals (**Default**)
+
+    - Cmd does not exist on Windows, so you might need to be cautious here and see what VSCode on Windows assigns
 
 # VSCode Shortcuts on Tabs
 
@@ -36,6 +38,6 @@ My goal is to keep it as simple as possible, so we can stick with Vim Motions fo
 
 ## Resources to learn Vim Motions
 
-- For some references, I practiced Vim by doing the `vimtutor` on Mac Terminal. I think this exists on Windows too.
+- For some references, I practiced Vim by doing `vimtutor` on Mac Terminal. I think this exists on Windows too.
 
-- I also watch some parts of the series `Vim as your editor` on Youtbue by `ThePrimeagen`
+- I also watch some parts of the series `Vim as your editor` on Youtube by `ThePrimeagen`
