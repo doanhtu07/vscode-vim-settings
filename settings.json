@@ -1,0 +1,67 @@
+{
+  // Most of this config is from https://github.com/VSCodeVim/Vim
+  // Some mappings are from https://github.com/VSCodeVim/Vim/#key-remapping
+  // Another example full config to look at: https://gist.github.com/safinakib/cc081218b73139ee81e5cb96dbc8e5db
+
+  "vim.easymotion": true, // https://github.com/easymotion/vim-easymotion
+  "vim.incsearch": true, // Show the next match while entering a search
+  "vim.useSystemClipboard": true, // Use the system clipboard register (*) as the default register
+  "vim.useCtrlKeys": true, // Enable Vim ctrl keys overriding common VS Code operations such as copy, paste, find, etc.
+  "vim.hlsearch": true, // Highlights all text matching current search
+  "vim.leader": "<Space>",
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      // In visual mode, delete WITHOUT putting content into clipboard register
+      "before": ["leader", "d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      // In visual mode, paste over WITHOUT putting content under cursor into clipboard register
+      "before": ["leader", "p"],
+      "after": ["p", "g", "v", "y"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      // In normal mode, same like in visual mode, but can use with MOTION (w, b, ...)
+      "before": ["leader", "d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      // To scroll down and center the cursor to the middle of screen
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    {
+      // To scroll p and center the cursor to the middle of screen
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"]
+    },
+    {
+      // Turn off highlight if necessary after search
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      // Add line break shortcut
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    },
+
+    // https://github.com/Melkeydev/vscode_bindings/blob/main/settings.json
+    // Split panes (by vertical and by horizontal)
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] }
+  ],
+  "vim.handleKeys": {
+    // Avoid Vim overriding VSCode default keybindings like find or select all in Windows
+    // These two keybindings below shouldn't matter in Mac
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  // To improve performance"
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  }
+}
