@@ -16,11 +16,11 @@ My goal is to keep it as simple as possible, so we can stick with Vim Motions fo
 
 - `` Ctrl + Shift + ` ``: Create new terminal (Must be set on our own)
 
-    - Search for `Terminal: Create New Terminal` and set the shortcut yourself
+    - Search for `Terminal: Create New Terminal` and set the shortcut yourself if you want. But the newest `keybindings.json` should already include it
 
 - `` Ctrl + Shift + Backspace ``: Delete terminal (Must be set on our own)
 
-    - Search for `Terminal: Kill the Active Terminal Instance` and set the shortcut yourself
+    - Search for `Terminal: Kill the Active Terminal Instance` and set the shortcut yourself if you want. But the newest `keybindings.json` should already include it
 
 - `` Cmd + Shift + [ `` or `` Cmd + Shift + ] ``: Navigate between terminals (**Default**)
 
@@ -34,7 +34,9 @@ My goal is to keep it as simple as possible, so we can stick with Vim Motions fo
 
 # VSCode Shortcuts for Editor and Explorer
 
-- `` Cmd + Shift + e ``: Switch focus among Editor and Explorer
+- `` Ctrl + e ``: Switch focus among Editor and Explorer
+
+  - Should be set with the newest `keybindings.json`
 
 ## Resources to learn Vim Motions
 

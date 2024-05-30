@@ -1,7 +1,29 @@
+// Place your key bindings in this file to override the defaults
 [
+  // VS Code related
+  {
+    "key": "ctrl+shift+backspace",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalHasBeenCreated || terminalIsOpen || terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "shift+alt+tab",
+    "command": "workbench.action.showAllEditors"
+  },
+
+  // Turbo console log: Optional if you use Turbo Console Log extension
+  {
+    "key": "cmd+i",
+    "command": "turboConsoleLog.displayLogMessage"
+  },
+
   // For better Vim experience
   // https://hoitz.medium.com/improved-vim-setup-in-visual-studio-code-bc579501b80c
-  // Navigate around panes
   {
     "key": "ctrl+h",
     "command": "workbench.action.focusLeftGroup",
@@ -24,7 +46,11 @@
   },
 
   // https://gist.github.com/safinakib/cc081218b73139ee81e5cb96dbc8e5db
-  // Navigate inside suggestions and autocompletion popups
+
+  //
+  // SUGGESTIONS AND AUTOCOMPLETION SHORTCUTS
+  //
+
   {
     // "ctrl+j": Selects the next suggestion in the suggestions widget when the widget is visible.
     "key": "ctrl+j",
@@ -51,25 +77,75 @@
   },
 
   // https://github.com/Melkeydev/vscode_bindings/blob/main/keybindings.json
-  // Some shortcuts for file tree
+  // https://dev.to/ansonh/10-vs-code-vim-tricks-to-boost-your-productivity-1b0n#1-smart-relative-line
+
+  // FILE TREE
+
   {
-    "key": "n",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "ctrl+e"
+  },
+  {
+    "command": "workbench.files.action.focusFilesExplorer",
+    "key": "ctrl+e",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "a",
     "command": "explorer.newFile",
-    "when": "filesExplorerFocus && !inputFocus"
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "f",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
     "key": "r",
     "command": "renameFile",
-    "when": "filesExplorerFocus && !inputFocus"
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
-    "key": "shift+n",
-    "command": "explorer.newFolder",
-    "when": "explorerViewletFocus"
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
-    "key": "d",
-    "command": "deleteFile",
-    "when": "filesExplorerFocus && !inputFocus"
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+
+  // SCROLL IN HOVER WINDOW
+
+  {
+    "key": "h",
+    "command": "editor.action.scrollLeftHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "j",
+    "command": "editor.action.scrollDownHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "k",
+    "command": "editor.action.scrollUpHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "l",
+    "command": "editor.action.scrollRightHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   }
 ]
