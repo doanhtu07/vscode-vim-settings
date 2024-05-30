@@ -51,8 +51,18 @@ My goal is to keep it as simple as possible, so we can stick with Vim Motions fo
 
   - Should be set with the newest `keybindings.json`
 
+- `` Ctrl + Shift + e ``: Very similar to above shortcut but don't close the Explorer
+
 ## Resources to learn Vim Motions
 
 - For some references, I practiced Vim by doing `vimtutor` on Mac Terminal. I think this exists on Windows too.
 
 - I also watch some parts of the series `Vim as your editor` on Youtube by `ThePrimeagen`
+
+## Cool extensions with VS Code
+
+- Beared Theme: For cool themes
+
+- Error Lens: Improve highlighting of errors and warnings
+
+- Material Icon Theme: For icon themes
