@@ -9,6 +9,12 @@
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
   "vim.leader": "<Space>",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
   "vim.visualModeKeyBindingsNonRecursive": [
     // https://github.com/VSCodeVim/Vim/#key-remapping
     {
@@ -23,9 +29,11 @@
   "vim.normalModeKeyBindings": [
     // https://dev.to/ansonh/10-vs-code-vim-tricks-to-boost-your-productivity-1b0n#6-scroll-in-show-hover
     {
-      "before": ["g", "h"],
+      "before": ["K"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
-    }
+    },
+    { "before": ["]", "d"], "commands": ["editor.action.marker.next"] },
+    { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -33,13 +41,8 @@
       "after": ["\"", "_", "d"]
     },
     {
-      "before": ["<C-n>"],
+      "before": ["<leader>", "n", "h"],
       "commands": [":nohl"]
-    },
-    {
-      "before": ["K"],
-      "commands": ["lineBreakInsert"],
-      "silent": true
     },
 
     // https://github.com/Melkeydev/vscode_bindings/blob/main/settings.json
@@ -68,8 +71,9 @@
   "editor.linkedEditing": true,
   "editor.stickyScroll.enabled": false,
   "workbench.tree.enableStickyScroll": false,
-  "editor.cursorSurroundingLines": 8,
+  "editor.cursorSurroundingLines": 12,
   "editor.lineNumbers": "relative",
   "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'JetBrainsMono Nerd Font'",
-  "explorer.compactFolders": false
+  "explorer.compactFolders": false,
+  "editor.formatOnSave": true
 }
