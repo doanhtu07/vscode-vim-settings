@@ -1,6 +1,7 @@
 // Place your key bindings in this file to override the defaults
 [
-  // VS Code related
+  // === VS Code related ===
+
   {
     "key": "ctrl+shift+backspace",
     "command": "workbench.action.terminal.kill",
@@ -47,9 +48,7 @@
 
   // https://gist.github.com/safinakib/cc081218b73139ee81e5cb96dbc8e5db
 
-  //
-  // SUGGESTIONS AND AUTOCOMPLETION SHORTCUTS
-  //
+  // === SUGGESTIONS AND AUTOCOMPLETION SHORTCUTS ===
 
   {
     // "ctrl+j": Selects the next suggestion in the suggestions widget when the widget is visible.
@@ -79,17 +78,24 @@
   // https://github.com/Melkeydev/vscode_bindings/blob/main/keybindings.json
   // https://dev.to/ansonh/10-vs-code-vim-tricks-to-boost-your-productivity-1b0n#1-smart-relative-line
 
-  // FILE TREE
+  // === FILE TREE ===
 
   {
-    "command": "workbench.action.toggleSidebarVisibility",
-    "key": "ctrl+e"
+    "command": "workbench.files.action.focusFilesExplorer",
+    "key": "f",
+    "when": "!inputFocus && sideBarVisible && explorerViewletVisible"
   },
   {
-    "command": "workbench.files.action.focusFilesExplorer",
-    "key": "ctrl+e",
-    "when": "editorTextFocus"
+    "command": "workbench.files.action.focusOpenEditorsView",
+    "key": "r",
+    "when": "!inputFocus && sideBarVisible && explorerViewletVisible"
   },
+  {
+    "command": "outline.focus",
+    "key": "o",
+    "when": "!inputFocus && sideBarVisible && explorerViewletVisible"
+  },
+
   {
     "key": "a",
     "command": "explorer.newFile",
@@ -98,11 +104,6 @@
   {
     "key": "f",
     "command": "explorer.newFolder",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "r",
-    "command": "renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
@@ -121,7 +122,7 @@
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
   },
 
-  // SCROLL IN HOVER WINDOW
+  // === SCROLL IN HOVER WINDOW ===
 
   {
     "key": "h",
@@ -142,10 +143,5 @@
     "key": "l",
     "command": "editor.action.scrollRightHover",
     "when": "editorHoverFocused"
-  },
-  {
-    "key": "ctrl+shift+`",
-    "command": "-workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   }
 ]
