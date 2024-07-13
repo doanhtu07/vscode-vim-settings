@@ -83,7 +83,10 @@
   {
     "command": "runCommands",
     "args": {
-      "commands": ["workbench.action.focusSideBar"]
+      "commands": [
+        "workbench.action.focusSideBar",
+        "workbench.explorer.fileView.focus"
+      ]
     },
     "key": "cmd+shift+e",
     "when": "!sideBarVisible"
@@ -97,17 +100,26 @@
     "when": "sideBarVisible"
   },
   {
-    "command": "workbench.files.action.focusFilesExplorer",
+    "command": "runCommands",
+    "args": {
+      "commands": ["workbench.explorer.fileView.focus"]
+    },
     "key": "f",
     "when": "!inputFocus && sideBarVisible && explorerViewletVisible"
   },
   {
-    "command": "workbench.files.action.focusOpenEditorsView",
+    "command": "runCommands",
+    "args": {
+      "commands": ["workbench.files.action.focusOpenEditorsView"]
+    },
     "key": "r",
     "when": "!inputFocus && sideBarVisible && explorerViewletVisible"
   },
   {
-    "command": "outline.focus",
+    "command": "runCommands",
+    "args": {
+      "commands": ["outline.focus"]
+    },
     "key": "o",
     "when": "!inputFocus && sideBarVisible && explorerViewletVisible"
   },
