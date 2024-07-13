@@ -81,6 +81,22 @@
   // === FILE TREE ===
 
   {
+    "command": "runCommands",
+    "args": {
+      "commands": ["workbench.action.focusSideBar"]
+    },
+    "key": "cmd+shift+e",
+    "when": "!sideBarVisible"
+  },
+  {
+    "command": "runCommands",
+    "args": {
+      "commands": ["workbench.action.closeSidebar"]
+    },
+    "key": "cmd+shift+e",
+    "when": "sideBarVisible"
+  },
+  {
     "command": "workbench.files.action.focusFilesExplorer",
     "key": "f",
     "when": "!inputFocus && sideBarVisible && explorerViewletVisible"
