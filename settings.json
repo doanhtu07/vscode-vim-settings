@@ -1,4 +1,6 @@
 {
+  // === My custom settings ===
+
   // Another example full config from https://gist.github.com/safinakib/cc081218b73139ee81e5cb96dbc8e5db
   // Look at settings.json and keybindings.json
 
@@ -48,7 +50,7 @@
     // https://github.com/Melkeydev/vscode_bindings/blob/main/settings.json
     // splits
     { "before": ["leader", "v"], "commands": [":vsplit"] },
-    { "before": ["leader", "s"], "commands": [":split"] }
+    { "before": ["leader", "h"], "commands": [":split"] }
   ],
   "vim.handleKeys": {
     "<C-a>": false,
@@ -75,5 +77,8 @@
   "editor.lineNumbers": "relative",
   "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'JetBrainsMono Nerd Font'",
   "explorer.compactFolders": false,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
 }
