@@ -26,6 +26,14 @@
     {
       "before": ["leader", "p"],
       "after": ["p", "g", "v", "y"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    },
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
     }
   ],
   "vim.normalModeKeyBindings": [
@@ -80,5 +88,16 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
-  }
+  },
+  "notebook.lineNumbers": "on",
+  "editor.renderWhitespace": "all",
+  "editor.fontSize": 13,
+  "terminal.integrated.fontSize": 13,
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "editor.minimap.enabled": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "typescript.updateImportsOnFileMove.enabled": "always"
+
+  // === Other auto settings ===
+  // ...
 }

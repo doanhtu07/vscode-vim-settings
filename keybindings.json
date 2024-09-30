@@ -18,10 +18,10 @@
   },
 
   // Turbo console log: Optional if you use Turbo Console Log extension
-  {
-    "key": "cmd+i",
-    "command": "turboConsoleLog.displayLogMessage"
-  },
+  // {
+  //   "key": "cmd+i",
+  //   "command": "turboConsoleLog.displayLogMessage"
+  // },
 
   // For better Vim experience
   // https://hoitz.medium.com/improved-vim-setup-in-visual-studio-code-bc579501b80c
@@ -99,29 +99,22 @@
     "key": "cmd+shift+e",
     "when": "sideBarVisible"
   },
+
   {
     "command": "runCommands",
     "args": {
-      "commands": ["workbench.explorer.fileView.focus"]
+      "commands": ["workbench.action.focusAuxiliaryBar"]
     },
-    "key": "f",
-    "when": "!inputFocus && sideBarVisible && explorerViewletVisible"
+    "key": "cmd+shift+b",
+    "when": "!auxiliaryBarVisible"
   },
   {
     "command": "runCommands",
     "args": {
-      "commands": ["workbench.files.action.focusOpenEditorsView"]
+      "commands": ["workbench.action.closeAuxiliaryBar"]
     },
-    "key": "r",
-    "when": "!inputFocus && sideBarVisible && explorerViewletVisible"
-  },
-  {
-    "command": "runCommands",
-    "args": {
-      "commands": ["outline.focus"]
-    },
-    "key": "o",
-    "when": "!inputFocus && sideBarVisible && explorerViewletVisible"
+    "key": "cmd+shift+b",
+    "when": "auxiliaryBarVisible"
   },
 
   {
@@ -171,5 +164,36 @@
     "key": "l",
     "command": "editor.action.scrollRightHover",
     "when": "editorHoverFocused"
+  },
+
+  // === Others ===
+
+  {
+    "key": "alt+f",
+    "command": "editor.action.inlineSuggest.hide",
+    "when": "inlineSuggestionVisible"
+  },
+  {
+    "key": "escape",
+    "command": "-editor.action.inlineSuggest.hide",
+    "when": "inlineSuggestionVisible"
+  },
+  {
+    "key": "alt+tab",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "alt+cmd+b",
+    "command": "-workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
   }
 ]
