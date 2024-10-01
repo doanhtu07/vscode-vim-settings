@@ -96,7 +96,8 @@
   "workbench.colorTheme": "Catppuccin Mocha",
   "editor.minimap.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.defaultProfile.osx": "zsh"
 
   // === Other auto settings ===
   // ...
