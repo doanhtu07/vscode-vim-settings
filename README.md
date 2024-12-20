@@ -1,7 +1,9 @@
-# VSCode Vim Settings 
+# VSCode Vim Settings
 
 ```
-Some of my commands use `Cmd`, but this key does not exist on Windows.
+Warning:
+
+Some of my commands use `cmd` key, but this key does not exist on Windows.
 So you might need to be cautious here and see what VSCode on Windows uses.
 ```
 
@@ -9,49 +11,105 @@ This is the repo for my collections of useful Vim shortcuts and bindings for VSC
 
 My goal is to keep it as simple as possible, so we can stick with Vim Motions for the most part.
 
-- `` settings.json ``: This is for `Preferences: Open User Settings (JSON)` 
+But of course, I have added some of my preferences for VSCode.
 
-    - **NOTE**: settings.json inside .vscode is just for me to format my repo, not relevant to our Vim settings
- 
-    - You can search for this setting by using `` Cmd + Shift + P ``
+- `settings.json`: This is for `Preferences: Open User Settings (JSON)`
 
-- `` keybindings.json ``: This is for `Preferences: Open Keyboard Shortcuts (JSON)`
+- `keybindings.json`: This is for `Preferences: Open Keyboard Shortcuts (JSON)`
+
+- You can search for these settings by using `Cmd + Shift + P`
 
 ## VSCode Shortcuts for Command Palette
 
-- `` Cmd + P ``: Open global file search panel
+- `Cmd + p`: Open global file search panel
 
-- `` Cmd + Shift + P ``: Open command search panel
+- `Cmd + Shift + p`: Open command search panel
 
-    - Here, you can search for settings and many other things too!
+  - Here, you can search for settings and many other things too!
+
+- `Cmd + Shift + r`: Open most recently used editors
 
 ## VSCode Shortcuts for Terminals
 
-- `` Ctrl + ` ``: Open terminal (**Default**)
+- `` Ctrl + ` ``: Open terminal
 
-- `` Ctrl + Shift + ` ``: Create new terminal (Must be set on our own)
+- `` Ctrl + Shift + ` ``: Create new terminal
 
-    - Search for `Terminal: Create New Terminal` and set the shortcut yourself if you want. But the newest `keybindings.json` should already include it
+- `Ctrl + Shift + Backspace`: Delete terminal
 
-- `` Ctrl + Shift + Backspace ``: Delete terminal (Must be set on our own)
-
-    - Search for `Terminal: Kill the Active Terminal Instance` and set the shortcut yourself if you want. But the newest `keybindings.json` should already include it
-
-- `` Cmd + Shift + [ `` or `` Cmd + Shift + ] ``: Navigate between terminals (**Default**)
+- `Cmd + Shift + [` / `Cmd + Shift + ]`: Navigate between terminals
 
 ## VSCode Shortcuts on Tabs
 
-- `` Cmd + Shift + [ `` or `` Cmd + Shift + ] ``: Navigate between opened tabs (**Default**)
+- `Cmd + Shift + [` / `Cmd + Shift + ]`: Navigate between opened tabs
 
-- `` Ctrl + Tab `` or `` Ctrl + Shift + Tab ``: Navigate virtually between opened tabs (**Default**)
+- `Ctrl + Tab` / `Ctrl + Shift + Tab`: Navigate virtually between opened tabs
 
-## VSCode Shortcuts for Editor and Explorer
+## VSCode Shortcuts for Side Panels
 
-- `` Ctrl + e ``: Switch focus among Editor and Explorer
+- `Cmd + Shift + e`: Switch focus among current Editor and Explorer
 
-  - Should be set with the newest `keybindings.json`
+- `Cmd + b`: Toggle Explorer
 
-- `` Ctrl + Shift + e ``: Very similar to above shortcut but don't close the Explorer
+- `Cmd + Shift + b`: Open tabs (open editors) side panel
+
+- `Cmd + Shift + x`: Focus Extensions panel
+
+- `Cmd + Shift + g`: Focus Git panel
+
+- `Cmd + Shift + c`: Close all panels on two sides
+
+## VSCode Shortcuts for Panes
+
+- `Ctrl + h`: Focus left pane
+- `Ctrl + j`: Focus bottom pane
+- `Ctrl + k`: Focus top pane
+- `Ctrl + l`: Focus right pane
+
+## VSCode Shortcuts for File Tree
+
+- `a`: New file
+- `x`: Cut file
+- `y`: Copy file
+- `p`: Paste file
+- `c`: Collapse all folders
+- `r`: Refresh file explorer
+- `/`: Find file/folder in explorer
+
+## VSCode Shortcuts for Codeium
+
+- `Alt + f`: Hide Codeium suggestions
+- `Alt + Tab`: Accept Codeium suggestions
+- `Alt + [` / `Alt + ]`: Navigate between Codeium suggestions
+- `Alt + \`: Trigger Codeium suggestions
+
+## Vim keybindings
+
+- `<leader>d` = Permanently delete instead of saving deleted text into Vim register
+
+### Normal mode
+
+- `jk` = Escape
+- `K` = Show definition under cursor
+- `]d` / `[d` = Next/previous diagnostic
+- `]h` / `[h` = Next/previous git change
+- `<leader>nh` = No highlight after searching
+- `<leader>hb` = Toggle git blame
+- `<leader>hr` = Revert selected git ranges
+- `<leader>rn` = Rename symbol
+- `<leader>pc` = Copy file path
+- `<leader>pa` = Toggle bookmarks
+- `<leader>pl` = Toggle bookmark labels (naming)
+- `<leader>po` = Focus bookmarks sidebar
+- `<leader>sv` = Split editor vertically
+- `<leader>sh` = Split editor horizontally
+- `<leader>sm` = Maximize current editor view
+
+### Visual mode
+
+- `<leader>p` = Paste and continue with the same text instead of default vim behavior for pasting
+- `<` = Decrease indentation and keep visual mode
+- `>` = Increase indentation and keep visual mode
 
 ## Resources to learn Vim Motions
 
@@ -61,8 +119,18 @@ My goal is to keep it as simple as possible, so we can stick with Vim Motions fo
 
 ## Cool extensions with VS Code
 
-- Beared Theme: For cool themes
+- Vim: Vim emulation for VSCode
 
-- Error Lens: Improve highlighting of errors and warnings
+- For cool themes:
+
+  - Bearded Theme
+  - Kanagawa
+  - Catpuccin
 
 - Material Icon Theme: For icon themes
+
+- Bookmarks: For bookmarks
+
+- Codeium: Free AI coding autocomplete
+
+- Markdown All in One: For better support for markdown file editing
