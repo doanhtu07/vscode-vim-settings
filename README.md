@@ -93,6 +93,8 @@ But of course, I have added some of my preferences for VSCode.
 - `K` = Show definition under cursor
 - `]d` / `[d` = Next/previous diagnostic
 - `]h` / `[h` = Next/previous git change
+- `<leader>d` = Permanently delete instead of saving into register
+- `<leader>pp` = Paste and continue with the same text instead of default vim behavior for pasting
 - `<leader>nh` = No highlight after searching
 - `<leader>hb` = Toggle git blame
 - `<leader>hr` = Revert selected git ranges
@@ -107,7 +109,6 @@ But of course, I have added some of my preferences for VSCode.
 
 ### Visual mode
 
-- `<leader>p` = Paste and continue with the same text instead of default vim behavior for pasting
 - `<` = Decrease indentation and keep visual mode
 - `>` = Increase indentation and keep visual mode
 
