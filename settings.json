@@ -127,7 +127,9 @@
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false,
-    "<C-b>": false
+    "<C-b>": false,
+    "<C-p>": false,
+    "<C-w>": false
   },
   // To improve performance
   "extensions.experimental.affinity": {
