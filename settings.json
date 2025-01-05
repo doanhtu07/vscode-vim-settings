@@ -129,7 +129,7 @@
     "<C-f>": false,
     "<C-b>": false
   },
-  // To improve performance"
+  // To improve performance
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1,
     "asvetliakov.vscode-neovim": 1

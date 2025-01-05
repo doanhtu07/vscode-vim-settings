@@ -21,7 +21,7 @@ Resources:
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   },
   {
-    "key": "shift+alt+tab",
+    "key": "shift+ctrl+tab",
     "command": "workbench.action.showAllEditors"
   },
 
@@ -223,7 +223,7 @@ Resources:
     "when": "inlineSuggestionVisible"
   },
   {
-    "key": "alt+tab",
+    "key": "ctrl+tab",
     "command": "editor.action.inlineSuggest.commit",
     "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
   },
