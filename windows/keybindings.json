@@ -28,22 +28,22 @@ Resources:
   // === PANE NAVIGATION ===
 
   {
-    "key": "ctrl+h",
+    "key": "ctrl+k h",
     "command": "workbench.action.focusLeftGroup",
     "when": "!editorTextFocus || (editorTextFocus && vim.active && vim.mode != 'Insert')"
   },
   {
-    "key": "ctrl+l",
+    "key": "ctrl+k l",
     "command": "workbench.action.focusRightGroup",
     "when": "!editorTextFocus || (editorTextFocus && vim.active && vim.mode != 'Insert')"
   },
   {
-    "key": "ctrl+k",
+    "key": "ctrl+k k",
     "command": "workbench.action.focusAboveGroup",
     "when": "!editorTextFocus || (editorTextFocus && vim.active && vim.mode != 'Insert')"
   },
   {
-    "key": "ctrl+j",
+    "key": "ctrl+k j",
     "command": "workbench.action.focusBelowGroup",
     "when": "!editorTextFocus || (editorTextFocus && vim.active && vim.mode != 'Insert')"
   },
@@ -170,6 +170,11 @@ Resources:
     "key": "r",
     "command": "workbench.files.action.refreshFilesExplorer",
     "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
     "key": "/",
