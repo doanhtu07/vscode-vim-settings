@@ -141,6 +141,7 @@
 
   // === Optional -- This is my own preference for how the editor looks ===
 
+  "files.eol": "\n", // LF by default
   "workbench.editor.showTabs": "single",
   "zenMode.showTabs": "single",
   "workbench.editor.editorActionsLocation": "titleBar",

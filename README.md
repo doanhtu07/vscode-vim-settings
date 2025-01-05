@@ -38,3 +38,21 @@ There are 2 guides:
 - Codeium: Free AI coding autocomplete
 
 - Markdown All in One: For better support for markdown file editing
+
+## Issue with CRLF + LF and Git on Windows
+
+- https://stackoverflow.com/questions/2517190/how-do-i-force-git-to-use-lf-instead-of-crlf-under-windows
+
+```bash
+git config --global core.autocrlf false
+git config --global core.eol lf
+```
+
+- Then you can install `prettier` globally
+- Run `prettier --write .` with this `.prettierrc` to fix all files/folders in the current directory
+
+```json
+{
+  "endOfLine": "lf"
+}
+```
