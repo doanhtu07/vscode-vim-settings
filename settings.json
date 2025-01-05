@@ -84,6 +84,15 @@
     },
 
     {
+      "before": ["<leader>", "t", "n"],
+      "commands": ["workbench.action.newEmptyEditorWindow"]
+    },
+    {
+      "before": ["<leader>", "t", "f"],
+      "commands": ["workbench.action.copyEditorToNewWindow"]
+    },
+
+    {
       "before": ["<leader>", "h", "b"],
       "commands": ["gitlens.toggleFileBlame"]
     },

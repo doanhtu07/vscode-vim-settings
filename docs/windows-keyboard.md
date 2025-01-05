@@ -80,6 +80,8 @@
 - `<leader>d` = Permanently delete instead of saving into register
 - `<leader>pp` = Paste and continue with the same text instead of default vim behavior for pasting
 - `<leader>nh` = No highlight after searching
+- `<leader>tn` = New empty editor window
+- `<leader>tf` = Copy editor to new window
 - `<leader>hb` = Toggle git blame
 - `<leader>hr` = Revert selected git ranges
 - `<leader>rn` = Rename symbol
