@@ -43,10 +43,16 @@ There are 2 guides:
 
 - https://stackoverflow.com/questions/2517190/how-do-i-force-git-to-use-lf-instead-of-crlf-under-windows
 
+- Do these before pulling or cloning anything
+
 ```bash
 git config --global core.autocrlf false
 git config --global core.eol lf
 ```
+
+- If you already have previous projects, you can manually fix line endings like below strategies
+
+### Prettier
 
 ---
 
@@ -59,13 +65,44 @@ git config --global core.eol lf
 }
 ```
 
+- But `prettier` can sometimes not work out of box for some file types unless you install extra plugins with it
+
 ---
 
-- But `prettier` can sometimes not work out of box for some file types unless you install extra plugins with it
 - So we can also use `dos2unix`
+
+### Simple dos2unix
 
 ```powershell
 Get-ChildItem -Recurse -File | ForEach-Object { dos2unix $_.FullName }
+```
+
+### Complicated dos2unix
+
+- To avoid stuff in gitignore
+
+```powershell
+# Read .gitignore and create an array of ignored patterns
+$gitignorePath = ".gitignore"
+$ignoredPatterns = Get-Content $gitignorePath | Where-Object { $_ -notmatch "^#|^$" }
+
+# Function to check if a file matches any ignored pattern
+function IsIgnored($filePath) {
+    foreach ($pattern in $ignoredPatterns) {
+        if ($filePath -like $pattern) {
+            return $true
+        }
+    }
+    return $false
+}
+
+# Recursively find all files and convert them to LF line endings
+Get-ChildItem -Recurse -File | ForEach-Object {
+    $relativePath = $_.FullName.Substring((Get-Location).Path.Length + 1)
+    if (-not (IsIgnored $relativePath)) {
+        dos2unix $_.FullName
+    }
+}
 ```
 
 ---
