@@ -12,8 +12,8 @@ But of course, I have added some of my preferences for VSCode.
 
 There are 2 guides:
 
-- One for machines with `Cmd` key: [MacOS](./docs/macos.md)
-- The other for machines with no `Cmd` key: [Windows](./docs/windows.md)
+- One for machines with `Cmd` key: [MacOS](./docs/macos-keyboard.md)
+- The other for machines with no `Cmd` key: [Windows](./docs/windows-keyboard.md)
 
 ## Resources to learn Vim Motions
 
