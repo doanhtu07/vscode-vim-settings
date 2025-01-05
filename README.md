@@ -48,6 +48,8 @@ git config --global core.autocrlf false
 git config --global core.eol lf
 ```
 
+---
+
 - Then you can install `prettier` globally
 - Run `prettier --write .` with this `.prettierrc` to fix all files/folders in the current directory
 
@@ -56,3 +58,14 @@ git config --global core.eol lf
   "endOfLine": "lf"
 }
 ```
+
+---
+
+- But `prettier` can sometimes not work out of box for some file types unless you install extra plugins with it
+- So we can also use `dos2unix`
+
+```powershell
+Get-ChildItem -Recurse -File | ForEach-Object { dos2unix $_.FullName }
+```
+
+---
