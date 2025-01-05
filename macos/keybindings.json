@@ -1,0 +1,268 @@
+/*
+Place your key bindings in this file to override the defaults
+
+Resources:
+- https://hoitz.medium.com/improved-vim-setup-in-visual-studio-code-bc579501b80c
+- https://gist.github.com/safinakib/cc081218b73139ee81e5cb96dbc8e5db 
+- https://github.com/Melkeydev/vscode_bindings/blob/main/keybindings.json
+- https://dev.to/ansonh/10-vs-code-vim-tricks-to-boost-your-productivity-1b0n#1-smart-relative-line
+*/
+[
+  // === VS CODE RELATED ===
+
+  {
+    "key": "ctrl+shift+backspace",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalHasBeenCreated || terminalIsOpen || terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "shift+alt+tab",
+    "command": "workbench.action.showAllEditors"
+  },
+
+  // === PANE NAVIGATION ===
+
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "!editorTextFocus || (editorTextFocus && vim.active && vim.mode != 'Insert')"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusRightGroup",
+    "when": "!editorTextFocus || (editorTextFocus && vim.active && vim.mode != 'Insert')"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusAboveGroup",
+    "when": "!editorTextFocus || (editorTextFocus && vim.active && vim.mode != 'Insert')"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.focusBelowGroup",
+    "when": "!editorTextFocus || (editorTextFocus && vim.active && vim.mode != 'Insert')"
+  },
+
+  // === SUGGESTIONS AND AUTOCOMPLETION SHORTCUTS ===
+
+  {
+    // "ctrl+j": Selects the next suggestion in the suggestions widget when the widget is visible.
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    // "ctrl+k": Selects the previous suggestion in the suggestions widget when the widget is visible.
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    // "ctrl+j": Selects the next item in the Quick Open dialog when it is open.
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    // "ctrl+k": Selects the previous item in the Quick Open dialog when it is open.
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    // "ctrl+j": Selects the next suggestion in the suggestions widget when the widget is visible.
+    "key": "ctrl+j",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    // "ctrl+k": Selects the previous suggestion in the suggestions widget when the widget is visible.
+    "key": "ctrl+k",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+
+  // === FILE TREE ===
+
+  {
+    "key": "cmd+shift+e",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "sideBarFocus && filesExplorerFocus"
+  },
+  {
+    "key": "cmd+shift+e",
+    "command": "workbench.explorer.fileView.focus",
+    "when": "!sideBarFocus || !filesExplorerFocus"
+  },
+
+  {
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.focusSideBar",
+        "workbench.explorer.fileView.focus"
+      ]
+    },
+    "key": "cmd+b",
+    "when": "!sideBarVisible"
+  },
+  {
+    "command": "runCommands",
+    "args": {
+      "commands": ["workbench.action.closeSidebar"]
+    },
+    "key": "cmd+b",
+    "when": "sideBarVisible"
+  },
+
+  {
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.focusAuxiliaryBar",
+        "workbench.files.action.focusOpenEditorsView"
+      ]
+    },
+    "key": "cmd+shift+b",
+    "when": "!auxiliaryBarVisible"
+  },
+  {
+    "command": "runCommands",
+    "args": {
+      "commands": ["workbench.action.closeAuxiliaryBar"]
+    },
+    "key": "cmd+shift+b",
+    "when": "auxiliaryBarVisible"
+  },
+
+  // I don't use !explorerResourceIsRoot in `when`
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "c",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "workbench.files.action.refreshFilesExplorer",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "/",
+    "command": "list.find",
+    "when": "explorerViewletVisible && filesExplorerFocus && listFocus && listSupportsFind && !inputFocus"
+  },
+
+  // === SCROLL IN HOVER WINDOW ===
+
+  {
+    "key": "h",
+    "command": "editor.action.scrollLeftHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "j",
+    "command": "editor.action.scrollDownHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "k",
+    "command": "editor.action.scrollUpHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "l",
+    "command": "editor.action.scrollRightHover",
+    "when": "editorHoverFocused"
+  },
+
+  // === Others ===
+
+  {
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.closeAuxiliaryBar",
+        "workbench.action.closeSidebar"
+      ]
+    },
+    "key": "cmd+shift+c"
+  },
+  {
+    "key": "alt+f",
+    "command": "editor.action.inlineSuggest.hide",
+    "when": "inlineSuggestionVisible"
+  },
+  {
+    "key": "escape",
+    "command": "-editor.action.inlineSuggest.hide",
+    "when": "inlineSuggestionVisible"
+  },
+  {
+    "key": "alt+tab",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "alt+cmd+b",
+    "command": "-workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack",
+    "when": "canNavigateBack && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward",
+    "when": "canNavigateForward && vim.mode == 'Normal'"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.commit",
+    "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  }
+]
