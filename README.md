@@ -39,6 +39,17 @@ There are 2 guides:
 
 - Markdown All in One: For better support for markdown file editing
 
+## Cool layout for VS Code
+
+To maximize productivity with VS Code, I use the following layout:
+
+- `Primary Side Bar` is on the `right`
+- `Secondary Side Bar` is on the `left`
+- I drag `Open Editors` and `Outline` to `Secondary Side Bar`
+- I also hide `Filters` in `Explorer`
+
+This is totally optional as it is my preference
+
 ## Issue with CRLF + LF and Git on Windows
 
 - https://stackoverflow.com/questions/2517190/how-do-i-force-git-to-use-lf-instead-of-crlf-under-windows

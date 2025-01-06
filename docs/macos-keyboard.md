@@ -88,6 +88,7 @@
 - `<leader>pa` = Toggle bookmarks
 - `<leader>pl` = Toggle bookmark labels (naming)
 - `<leader>po` = Focus bookmarks sidebar
+- `<leader>ol` = Focus outline
 - `<leader>sv` = Split editor vertically
 - `<leader>sh` = Split editor horizontally
 - `<leader>sm` = Maximize current editor view

@@ -124,6 +124,11 @@
       "commands": ["bookmarksExplorer.focus"]
     },
 
+    {
+      "before": ["<leader>", "o", "l"],
+      "commands": ["workbench.action.focusAuxiliaryBar", "outline.focus"]
+    },
+
     // https://github.com/Melkeydev/vscode_bindings/blob/main/settings.json
     // splits
     { "before": ["leader", "s", "v"], "commands": [":vsplit"] },
