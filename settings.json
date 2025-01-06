@@ -131,6 +131,10 @@
     {
       "before": ["leader", "s", "m"],
       "commands": ["workbench.action.toggleMaximizeEditorGroup"]
+    },
+    {
+      "before": ["leader", "s", "e"],
+      "commands": ["workbench.action.evenEditorWidths"]
     }
   ],
   "vim.handleKeys": {

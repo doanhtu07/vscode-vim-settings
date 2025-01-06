@@ -92,6 +92,7 @@
 - `<leader>sv` = Split editor vertically
 - `<leader>sh` = Split editor horizontally
 - `<leader>sm` = Maximize current editor view
+- `<leader>se` = Equalize all split views
 
 ## Visual mode
 
