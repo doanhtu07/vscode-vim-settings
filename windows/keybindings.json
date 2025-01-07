@@ -24,6 +24,23 @@ Resources:
     "key": "shift+ctrl+tab",
     "command": "workbench.action.showAllEditors"
   },
+  {
+    "key": "shift+ctrl+r",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+  },
+
+  // === VIM RELATED ===
+
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack",
+    "when": "canNavigateBack && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward",
+    "when": "canNavigateForward && vim.mode == 'Normal'"
+  },
 
   // === PANE NAVIGATION ===
 
@@ -139,6 +156,21 @@ Resources:
     "key": "ctrl+shift+b",
     "when": "auxiliaryBarVisible"
   },
+  {
+    "key": "alt+ctrl+b",
+    "command": "-workbench.action.toggleAuxiliaryBar"
+  },
+
+  {
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.closeAuxiliaryBar",
+        "workbench.action.closeSidebar"
+      ]
+    },
+    "key": "ctrl+shift+c"
+  },
 
   // I don't use !explorerResourceIsRoot in `when`
   {
@@ -205,20 +237,10 @@ Resources:
     "when": "editorHoverFocused"
   },
 
-  // === Others ===
+  // === Codeium ===
 
   {
-    "command": "runCommands",
-    "args": {
-      "commands": [
-        "workbench.action.closeAuxiliaryBar",
-        "workbench.action.closeSidebar"
-      ]
-    },
-    "key": "ctrl+shift+c"
-  },
-  {
-    "key": "alt+f",
+    "key": "ctrl+shift+h",
     "command": "editor.action.inlineSuggest.hide",
     "when": "inlineSuggestionVisible"
   },
@@ -238,26 +260,12 @@ Resources:
     "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
   },
   {
-    "key": "alt+ctrl+b",
-    "command": "-workbench.action.toggleAuxiliaryBar"
-  },
-  {
-    "key": "shift+ctrl+r",
-    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
-  },
-  {
-    "key": "ctrl+-",
-    "command": "-workbench.action.navigateBack",
-    "when": "canNavigateBack && vim.mode == 'Normal'"
-  },
-  {
-    "key": "ctrl+shift+-",
-    "command": "-workbench.action.navigateForward",
-    "when": "canNavigateForward && vim.mode == 'Normal'"
-  },
-  {
     "key": "tab",
     "command": "-editor.action.inlineSuggest.commit",
     "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "-workbench.action.replaceInFiles"
   }
 ]

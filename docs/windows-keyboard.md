@@ -62,7 +62,7 @@
 
 # VSCode Shortcuts for Codeium
 
-- `Alt + f`: Hide Codeium suggestions
+- `Ctrl + Shift + h`: Hide Codeium suggestions
 - `Ctrl + Tab`: Accept Codeium suggestions
 - `Alt + [` / `Alt + ]`: Navigate between Codeium suggestions
 - `Alt + \`: Trigger Codeium suggestions
