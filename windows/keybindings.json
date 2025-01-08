@@ -250,7 +250,7 @@ Resources:
     "when": "inlineSuggestionVisible"
   },
   {
-    "key": "ctrl+tab",
+    "key": "alt+a",
     "command": "editor.action.inlineSuggest.commit",
     "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
   },
