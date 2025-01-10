@@ -252,7 +252,7 @@ Resources:
   {
     "key": "alt+a",
     "command": "editor.action.inlineSuggest.commit",
-    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+    "when": "editorTextFocus && inlineSuggestionVisible"
   },
   {
     "key": "tab",
