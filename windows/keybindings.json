@@ -237,6 +237,13 @@ Resources:
     "when": "editorHoverFocused"
   },
 
+  // === Windows ===
+
+  {
+    "key": "ctrl+k shift+w",
+    "command": "workbench.action.switchWindow"
+  },
+
   // === Codeium ===
 
   {
@@ -264,6 +271,9 @@ Resources:
     "command": "-editor.action.inlineSuggest.commit",
     "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
   },
+
+  // === Others ===
+
   {
     "key": "ctrl+shift+h",
     "command": "-workbench.action.replaceInFiles"
