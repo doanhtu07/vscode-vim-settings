@@ -237,14 +237,14 @@ Resources:
     "when": "editorHoverFocused"
   },
 
-  // === Windows ===
+  // === WINDOWS ===
 
   {
     "key": "ctrl+k shift+w",
     "command": "workbench.action.switchWindow"
   },
 
-  // === Codeium ===
+  // === CODEIUM ===
 
   {
     "key": "ctrl+shift+h",
@@ -252,10 +252,16 @@ Resources:
     "when": "inlineSuggestionVisible"
   },
   {
+    "key": "ctrl+shift+h",
+    "command": "-workbench.action.replaceInFiles"
+  },
+
+  {
     "key": "escape",
     "command": "-editor.action.inlineSuggest.hide",
     "when": "inlineSuggestionVisible"
   },
+
   {
     "key": "alt+a",
     "command": "editor.action.inlineSuggest.commit",
@@ -270,12 +276,5 @@ Resources:
     "key": "tab",
     "command": "-editor.action.inlineSuggest.commit",
     "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
-  },
-
-  // === Others ===
-
-  {
-    "key": "ctrl+shift+h",
-    "command": "-workbench.action.replaceInFiles"
   }
 ]
