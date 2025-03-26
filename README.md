@@ -1,5 +1,7 @@
 # VSCode Vim Settings
 
+![Demo Picture](./assets/demo.png)
+
 This is the repo for my collections of useful Vim shortcuts and bindings for VSCode.
 
 My goal is to keep it as simple as possible, so we can stick with Vim Motions for the most part.
