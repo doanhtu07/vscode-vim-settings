@@ -149,53 +149,18 @@
     "<C-p>": false,
     "<C-w>": false
   },
+  "vim.highlightedyank.enable": true,
+  "vim.foldfix": true,
+
   // To improve performance
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1,
     "asvetliakov.vscode-neovim": 1
   },
-  "vim.highlightedyank.enable": true,
-  "vim.foldfix": true,
 
   // === Optional -- This is my own preference for how the editor looks ===
 
   "files.eol": "\n", // LF by default
-  "workbench.editor.showTabs": "single",
-  "zenMode.showTabs": "single",
-  "workbench.editor.editorActionsLocation": "titleBar",
-  "zenMode.hideLineNumbers": false,
-  "zenMode.hideStatusBar": false,
-  "workbench.activityBar.location": "bottom",
-  "editor.linkedEditing": true,
-  "editor.stickyScroll.enabled": false,
-  "workbench.tree.enableStickyScroll": false,
-  "editor.cursorSurroundingLines": 12,
-  "editor.lineNumbers": "relative",
-  "editor.fontFamily": "Menlo, 'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
-  "notebook.lineNumbers": "on",
-  "editor.renderWhitespace": "all",
-  "editor.fontSize": 14,
-  "terminal.integrated.fontSize": 14,
-  "workbench.colorTheme": "Kanagawa",
-  "editor.minimap.enabled": false,
-  "workbench.iconTheme": "material-icon-theme",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "search.useIgnoreFiles": false,
-  "terminal.integrated.enableImages": true,
-  "terminal.external.osxExec": "WezTerm.app",
-  "workbench.editor.enablePreview": false,
-  "window.openFoldersInNewWindow": "on",
-  "window.confirmSaveUntitledWorkspace": false,
-  "workbench.list.typeNavigationMode": "automatic",
-  "workbench.list.defaultFindMode": "filter",
-  "explorer.compactFolders": false,
-  "workbench.sideBar.location": "right",
-  "editor.inlayHints.enabled": "off",
   "files.exclude": {
     "**/.DS_Store": false,
     "**/.git": false,
@@ -203,7 +168,62 @@
     "**/.svn": false,
     "**/CVS": false,
     "**/Thumbs.db": false
-  }
+  },
+
+  "zenMode.showTabs": "single",
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false,
+
+  "workbench.editor.showTabs": "single",
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "workbench.activityBar.location": "top",
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.editor.enablePreview": false,
+  "workbench.list.typeNavigationMode": "automatic",
+  "workbench.list.defaultFindMode": "filter",
+  "workbench.sideBar.location": "right",
+  "workbench.colorTheme": "Kanagawa",
+  "workbench.secondarySideBar.showLabels": false,
+
+  "editor.linkedEditing": true,
+  "editor.stickyScroll.enabled": false,
+  "editor.cursorSurroundingLines": 12,
+  "editor.lineNumbers": "relative",
+  "editor.fontFamily": "'Monaspace Argon', Menlo, 'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
+  "editor.inlineSuggest.fontFamily": "'Monaspace Krypton', monospace",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.renderWhitespace": "all",
+  "editor.fontSize": 12,
+  "editor.minimap.enabled": false,
+  "editor.inlayHints.enabled": "off",
+  "editor.accessibilitySupport": "off",
+
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.enableImages": true,
+  "terminal.external.osxExec": "WezTerm.app",
+
+  "explorer.compactFolders": false,
+
+  "search.useIgnoreFiles": false,
+
+  "window.openFoldersInNewWindow": "on",
+  "window.confirmSaveUntitledWorkspace": false,
+
+  "notebook.lineNumbers": "on",
+
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  "peacock.surpriseMeOnStartup": true,
+  "peacock.affectActivityBar": false,
+  "peacock.affectStatusBar": true,
+  "peacock.affectTitleBar": false,
+
+  "vscode-pets.theme": "castle"
 
   // === Other auto settings ===
   // ...
