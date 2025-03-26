@@ -24,6 +24,36 @@ Resources:
     "key": "shift+alt+tab",
     "command": "workbench.action.showAllEditors"
   },
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+  },
+
+  // === GIT + SOURCE CONTROL ===
+
+  {
+    "key": "shift+cmd+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+
+  // === VIM RELATED ===
+
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack",
+    "when": "canNavigateBack && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward",
+    "when": "canNavigateForward && vim.mode == 'Normal'"
+  },
 
   // === PANE NAVIGATION ===
 
@@ -139,6 +169,21 @@ Resources:
     "key": "cmd+shift+b",
     "when": "auxiliaryBarVisible"
   },
+  {
+    "key": "alt+cmd+b",
+    "command": "-workbench.action.toggleAuxiliaryBar"
+  },
+
+  {
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.closeAuxiliaryBar",
+        "workbench.action.closeSidebar"
+      ]
+    },
+    "key": "cmd+shift+c"
+  },
 
   // I don't use !explorerResourceIsRoot in `when`
   {
@@ -200,18 +245,15 @@ Resources:
     "when": "editorHoverFocused"
   },
 
-  // === Others ===
+  // === WINDOWS ===
 
   {
-    "command": "runCommands",
-    "args": {
-      "commands": [
-        "workbench.action.closeAuxiliaryBar",
-        "workbench.action.closeSidebar"
-      ]
-    },
-    "key": "cmd+shift+c"
+    "key": "cmd+k shift+w",
+    "command": "workbench.action.switchWindow"
   },
+
+  // === CODEIUM ===
+
   {
     "key": "alt+f",
     "command": "editor.action.inlineSuggest.hide",
@@ -222,43 +264,16 @@ Resources:
     "command": "-editor.action.inlineSuggest.hide",
     "when": "inlineSuggestionVisible"
   },
+
   {
     "key": "alt+tab",
     "command": "editor.action.inlineSuggest.commit",
-    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+    "when": "editorTextFocus && inlineSuggestionVisible"
   },
   {
     "key": "tab",
     "command": "-editor.action.inlineSuggest.commit",
     "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
-  },
-  {
-    "key": "alt+cmd+b",
-    "command": "-workbench.action.toggleAuxiliaryBar"
-  },
-  {
-    "key": "shift+cmd+r",
-    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
-  },
-  {
-    "key": "ctrl+-",
-    "command": "-workbench.action.navigateBack",
-    "when": "canNavigateBack && vim.mode == 'Normal'"
-  },
-  {
-    "key": "ctrl+shift+-",
-    "command": "-workbench.action.navigateForward",
-    "when": "canNavigateForward && vim.mode == 'Normal'"
-  },
-  {
-    "key": "shift+cmd+g",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active"
-  },
-  {
-    "key": "ctrl+shift+g",
-    "command": "-workbench.view.scm",
-    "when": "workbench.scm.active"
   },
   {
     "key": "tab",
