@@ -202,6 +202,8 @@
   "editor.inlayHints.enabled": "off",
   "editor.accessibilitySupport": "off",
 
+  "explorer.autoReveal": "focusNoScroll",
+
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.enableImages": true,
@@ -223,7 +225,7 @@
   "peacock.affectStatusBar": true,
   "peacock.affectTitleBar": false,
 
-  "vscode-pets.theme": "castle"
+  "vscode-pets.theme": "beach"
 
   // === Other auto settings ===
   // ...
