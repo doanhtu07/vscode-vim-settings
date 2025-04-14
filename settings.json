@@ -1,5 +1,5 @@
 {
-  // === My custom settings ===
+  // MARK: === My custom settings ===
 
   // Another example full config from https://gist.github.com/safinakib/cc081218b73139ee81e5cb96dbc8e5db
   // Look at settings.json and keybindings.json
@@ -158,7 +158,7 @@
     "asvetliakov.vscode-neovim": 1
   },
 
-  // === Optional -- This is my own preference for how the editor looks ===
+  // MARK: === Optional -- This is my own preference for how the editor looks ===
 
   "files.eol": "\n", // LF by default
   "files.exclude": {
@@ -170,18 +170,18 @@
     "**/Thumbs.db": false
   },
 
-  "zenMode.showTabs": "single",
+  "zenMode.showTabs": "none",
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
 
-  "workbench.editor.showTabs": "single",
+  "workbench.editor.showTabs": "none",
   "workbench.editor.editorActionsLocation": "titleBar",
   "workbench.activityBar.location": "top",
   "workbench.tree.enableStickyScroll": false,
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.editor.enablePreview": false,
   "workbench.list.typeNavigationMode": "automatic",
-  "workbench.list.defaultFindMode": "filter",
+  "workbench.list.defaultFindMode": "highlight",
   "workbench.sideBar.location": "right",
   "workbench.colorTheme": "Kanagawa",
   "workbench.secondarySideBar.showLabels": false,
@@ -198,16 +198,18 @@
   },
   "editor.renderWhitespace": "all",
   "editor.fontSize": 12,
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": true,
+  "editor.minimap.showMarkSectionHeaders": true,
+  "editor.minimap.showRegionSectionHeaders": true,
   "editor.inlayHints.enabled": "off",
   "editor.accessibilitySupport": "off",
+
+  "explorer.autoReveal": "focusNoScroll",
 
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.enableImages": true,
   "terminal.external.osxExec": "WezTerm.app",
-
-  "explorer.compactFolders": false,
 
   "search.useIgnoreFiles": false,
 
@@ -217,13 +219,14 @@
   "notebook.lineNumbers": "on",
 
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
 
   "peacock.surpriseMeOnStartup": true,
   "peacock.affectActivityBar": false,
   "peacock.affectStatusBar": true,
   "peacock.affectTitleBar": false,
 
-  "vscode-pets.theme": "castle"
+  "vscode-pets.theme": "beach"
 
   // === Other auto settings ===
   // ...
