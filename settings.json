@@ -158,7 +158,7 @@
     "asvetliakov.vscode-neovim": 1
   },
 
-  // MARK: === Optional -- This is my own preference for how the editor looks ===
+  // MARK: === Optional - This is my own preference for how the editor looks ===
 
   "files.eol": "\n", // LF by default
   "files.exclude": {
@@ -185,6 +185,7 @@
   "workbench.sideBar.location": "right",
   "workbench.colorTheme": "Kanagawa",
   "workbench.secondarySideBar.showLabels": false,
+  "workbench.hover.delay": 300,
 
   "editor.linkedEditing": true,
   "editor.stickyScroll.enabled": false,
@@ -203,6 +204,7 @@
   "editor.minimap.showRegionSectionHeaders": true,
   "editor.inlayHints.enabled": "off",
   "editor.accessibilitySupport": "off",
+  "editor.hover.delay": 300,
 
   "explorer.autoReveal": "focusNoScroll",
 
@@ -228,6 +230,6 @@
 
   "vscode-pets.theme": "beach"
 
-  // === Other auto settings ===
+  // MARK: === Other auto settings ===
   // ...
 }
