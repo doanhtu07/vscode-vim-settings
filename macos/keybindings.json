@@ -1,14 +1,14 @@
 /*
-Place your key bindings in this file to override the defaults
+  Place your key bindings in this file to override the defaults
 
-Resources:
-- https://hoitz.medium.com/improved-vim-setup-in-visual-studio-code-bc579501b80c
-- https://gist.github.com/safinakib/cc081218b73139ee81e5cb96dbc8e5db 
-- https://github.com/Melkeydev/vscode_bindings/blob/main/keybindings.json
-- https://dev.to/ansonh/10-vs-code-vim-tricks-to-boost-your-productivity-1b0n#1-smart-relative-line
+  Resources:
+  - https://hoitz.medium.com/improved-vim-setup-in-visual-studio-code-bc579501b80c
+  - https://gist.github.com/safinakib/cc081218b73139ee81e5cb96dbc8e5db 
+  - https://github.com/Melkeydev/vscode_bindings/blob/main/keybindings.json
+  - https://dev.to/ansonh/10-vs-code-vim-tricks-to-boost-your-productivity-1b0n#1-smart-relative-line
 */
 [
-  // === VS CODE RELATED ===
+  // MARK: VS CODE RELATED
 
   {
     "key": "ctrl+shift+backspace",
@@ -29,7 +29,7 @@ Resources:
     "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
   },
 
-  // === GIT + SOURCE CONTROL ===
+  // MARK: GIT + SOURCE CONTROL
 
   {
     "key": "shift+cmd+g",
@@ -42,7 +42,7 @@ Resources:
     "when": "workbench.scm.active"
   },
 
-  // === VIM RELATED ===
+  // MARK: VIM RELATED
 
   {
     "key": "ctrl+-",
@@ -55,7 +55,7 @@ Resources:
     "when": "canNavigateForward && vim.mode == 'Normal'"
   },
 
-  // === PANE NAVIGATION ===
+  // MARK: PANE NAVIGATION
 
   {
     "key": "ctrl+h",
@@ -78,7 +78,7 @@ Resources:
     "when": "!editorTextFocus || (editorTextFocus && vim.active && vim.mode != 'Insert')"
   },
 
-  // === SUGGESTIONS AND AUTOCOMPLETION SHORTCUTS ===
+  // MARK: SUGGESTIONS AND AUTOCOMPLETION SHORTCUTS
 
   {
     // "ctrl+j": Selects the next suggestion in the suggestions widget when the widget is visible.
@@ -117,19 +117,14 @@ Resources:
     "when": "codeActionMenuVisible"
   },
 
-  // === FILE TREE ===
+  // MARK: FILE TREE
 
   {
     "key": "cmd+shift+e",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "sideBarFocus && filesExplorerFocus"
-  },
-  {
-    "key": "cmd+shift+e",
-    "command": "workbench.explorer.fileView.focus",
-    "when": "!sideBarFocus || !filesExplorerFocus"
+    "command": "workbench.action.focusActiveEditorGroup"
   },
 
+  // Multi-command: Focus side bar
   {
     "command": "runCommands",
     "args": {
@@ -150,6 +145,7 @@ Resources:
     "when": "sideBarVisible"
   },
 
+  // Multi-command: Focus auxiliary bar
   {
     "command": "runCommands",
     "args": {
@@ -174,6 +170,19 @@ Resources:
     "command": "-workbench.action.toggleAuxiliaryBar"
   },
 
+  // Mutli-command: Close all bars and panels
+  {
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.togglePanel",
+        "workbench.action.closeAuxiliaryBar",
+        "workbench.action.closeSidebar"
+      ]
+    },
+    "when": "panelVisible",
+    "key": "cmd+shift+c"
+  },
   {
     "command": "runCommands",
     "args": {
@@ -182,6 +191,7 @@ Resources:
         "workbench.action.closeSidebar"
       ]
     },
+    "when": "!panelVisible",
     "key": "cmd+shift+c"
   },
 
@@ -219,10 +229,20 @@ Resources:
   {
     "key": "/",
     "command": "list.find",
-    "when": "explorerViewletVisible && filesExplorerFocus && listFocus && listSupportsFind && !inputFocus"
+    "when": "listFocus && listSupportsFind && !inputFocus"
+  },
+  {
+    "key": "shift+j",
+    "command": "list.expandSelectionDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "shift+k",
+    "command": "list.expandSelectionUp",
+    "when": "listFocus && !inputFocus"
   },
 
-  // === SCROLL IN HOVER WINDOW ===
+  // MARK: SCROLL IN HOVER WINDOW
 
   {
     "key": "h",
@@ -245,14 +265,14 @@ Resources:
     "when": "editorHoverFocused"
   },
 
-  // === WINDOWS ===
+  // MARK: WINDOWS
 
   {
     "key": "cmd+k shift+w",
     "command": "workbench.action.switchWindow"
   },
 
-  // === CODEIUM ===
+  // MARK: CODEIUM
 
   {
     "key": "alt+f",
@@ -279,5 +299,38 @@ Resources:
     "key": "tab",
     "command": "-editor.action.inlineSuggest.commit",
     "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+
+  // MARK: FILE JUMP NAVIGATION
+
+  {
+    "key": "ctrl+=",
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "ctrl+shift+=",
+    "command": "workbench.action.navigateForwardInEditLocations"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "workbench.action.navigateBackInEditLocations"
+  },
+  {
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\\\r\n"
+    },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+k shift+cmd+p",
+    "command": "workbench.action.openView"
   }
 ]
