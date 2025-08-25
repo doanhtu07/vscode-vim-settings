@@ -1,33 +1,68 @@
 {
-  // MARK: === My custom settings ===
+  // MARK: My custom settings
 
   // Another example full config from https://gist.github.com/safinakib/cc081218b73139ee81e5cb96dbc8e5db
   // Look at settings.json and keybindings.json
 
   // Config from https://github.com/VSCodeVim/Vim
+
+  // To improve performance
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1,
+    "asvetliakov.vscode-neovim": 1
+  },
+
+  "vim.disableExtension": true,
   "vim.easymotion": true,
-  "vim.incsearch": true,
-  // "vim.useSystemClipboard": true, // --> To work with system clipboard, you can either use this option or use "*y and "*p
-  "vim.useCtrlKeys": true,
+  "vim.foldfix": true,
+  "vim.highlightedyank.enable": true,
   "vim.hlsearch": true,
+  "vim.incsearch": true,
   "vim.leader": "<Space>",
+  "vim.timeout": 1000,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": false, // -> To work with system clipboard, you can either use this option or use "*y and "*p,
+
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-b>": false,
+    "<C-p>": false,
+    "<C-w>": false
+  },
+
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
       "after": ["<Esc>"]
     }
   ],
+
+  "vim.visualModeKeyBindings": [
+    // Turbo
+    {
+      "before": ["<leader>", "l", "l"],
+      "commands": ["turboConsoleLog.displayLogMessage"]
+    }
+  ],
+
   "vim.visualModeKeyBindingsNonRecursive": [
     // Permanently delete instead of saving into register
     {
-      "before": ["leader", "d"],
+      "before": ["<leader>", "d"],
       "after": ["\"", "_", "d"]
     },
 
     // Paste and continue with the same text instead of default vim behavior for pasting
     {
-      "before": ["leader", "p", "p"],
+      "before": ["<leader>", "p", "p"],
       "after": ["p", "g", "v", "y"]
+    },
+
+    // Easymotion
+    {
+      "before": ["<leader>", "j"],
+      "after": ["<leader>", "<leader>", "2", "s"]
     },
 
     // https://github.com/VSCodeVim/Vim/#key-remapping
@@ -40,14 +75,19 @@
       "after": [">", "g", "v"]
     }
   ],
+
   "vim.normalModeKeyBindings": [
     // https://dev.to/ansonh/10-vs-code-vim-tricks-to-boost-your-productivity-1b0n#6-scroll-in-show-hover
     {
       "before": ["K"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
     },
+
+    // Go to next/previous marker/diagnostic in the editor
     { "before": ["]", "d"], "commands": ["editor.action.marker.next"] },
     { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] },
+
+    // Go to next/previous change in the diff editor
     {
       "before": ["]", "h"],
       "commands": [
@@ -63,54 +103,85 @@
         // "workbench.action.editor.previousChange",
         "workbench.action.compareEditor.previousChange"
       ]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    // Permanently delete instead of saving into register
-    {
-      "before": ["leader", "d"],
-      "after": ["\"", "_", "d"]
     },
 
-    // Paste and continue with the same text instead of default vim behavior for pasting
+    // Reload window
     {
-      "before": ["leader", "p", "p"],
-      "after": ["p", "g", "v", "y"]
+      "before": ["<leader>", "r", "w"],
+      "commands": ["workbench.action.reloadWindow"]
     },
 
+    // Active editors
+    {
+      "before": ["<leader>", "e", "a"],
+      "commands": ["workbench.action.showEditorsInActiveGroup"]
+    },
+
+    // All views
+    {
+      "before": ["<leader>", "o", "v"],
+      "commands": ["workbench.action.openView"]
+    },
+
+    // Save file
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+
+    // Save file without formatting
+    {
+      "before": ["<leader>", "W"],
+      "commands": ["workbench.action.files.saveWithoutFormatting"]
+    },
+
+    // Format file
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+
+    // Minimap
+    {
+      "before": ["<leader>", "m", "m"],
+      "commands": ["editor.action.toggleMinimap"]
+    },
+
+    // No highlight search
     {
       "before": ["<leader>", "n", "h"],
       "commands": [":nohl"]
     },
 
+    // Window management
     {
       "before": ["<leader>", "t", "n"],
-      "commands": ["workbench.action.newEmptyEditorWindow"]
-    },
-    {
-      "before": ["<leader>", "t", "f"],
-      "commands": ["workbench.action.copyEditorToNewWindow"]
+      "commands": ["workbench.action.duplicateWorkspaceInNewWindow"]
     },
 
+    // Git
     {
       "before": ["<leader>", "h", "b"],
-      "commands": ["gitlens.toggleFileBlame"]
+      "commands": ["git.blame.toggleEditorDecoration"]
     },
     {
       "before": ["<leader>", "h", "r"],
       "commands": ["git.revertSelectedRanges"]
     },
 
+    // Rename
     {
       "before": ["<leader>", "r", "n"],
       "commands": ["editor.action.rename"]
     },
 
+    // Copy file path
     {
       "before": ["<leader>", "p", "c"],
       "commands": ["copyFilePath"]
     },
 
+    // Bookmarks
     {
       "before": ["<leader>", "p", "a"],
       "commands": ["bookmarks.toggle"]
@@ -124,41 +195,71 @@
       "commands": ["bookmarksExplorer.focus"]
     },
 
+    // Turbo
+    {
+      "before": ["<leader>", "l", "l"],
+      "commands": ["turboConsoleLog.displayLogMessage"]
+    },
+    {
+      "before": ["<leader>", "l", "d"],
+      "commands": ["turboConsoleLog.deleteAllLogMessages"]
+    },
+    {
+      "before": ["<leader>", "l", "c"],
+      "commands": ["turboConsoleLog.commentAllLogMessages"]
+    },
+    {
+      "before": ["<leader>", "l", "u"],
+      "commands": ["turboConsoleLog.uncommentAllLogMessages"]
+    },
+
+    // Outline
     {
       "before": ["<leader>", "o", "l"],
-      "commands": ["workbench.action.focusAuxiliaryBar", "outline.focus"]
+      "commands": ["outline.focus"]
+    },
+
+    // Timeline
+    {
+      "before": ["<leader>", "t", "l"],
+      "commands": ["timeline.focus"]
     },
 
     // https://github.com/Melkeydev/vscode_bindings/blob/main/settings.json
-    // splits
-    { "before": ["leader", "s", "v"], "commands": [":vsplit"] },
-    { "before": ["leader", "s", "h"], "commands": [":split"] },
+    // Splits
+    { "before": ["<leader>", "s", "v"], "commands": [":vsplit"] },
+    { "before": ["<leader>", "s", "h"], "commands": [":split"] },
     {
-      "before": ["leader", "s", "m"],
+      "before": ["<leader>", "s", "m"],
       "commands": ["workbench.action.toggleMaximizeEditorGroup"]
     },
     {
-      "before": ["leader", "s", "e"],
+      "before": ["<leader>", "s", "e"],
       "commands": ["workbench.action.evenEditorWidths"]
     }
   ],
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false,
-    "<C-b>": false,
-    "<C-p>": false,
-    "<C-w>": false
-  },
-  "vim.highlightedyank.enable": true,
-  "vim.foldfix": true,
 
-  // To improve performance
-  "extensions.experimental.affinity": {
-    "vscodevim.vim": 1,
-    "asvetliakov.vscode-neovim": 1
-  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // Permanently delete instead of saving into register
+    {
+      "before": ["<leader>", "d"],
+      "after": ["\"", "_", "d"]
+    },
 
-  // MARK: === Optional - This is my own preference for how the editor looks ===
+    // Paste and continue with the same text instead of default vim behavior for pasting
+    {
+      "before": ["<leader>", "p", "p"],
+      "after": ["p", "g", "v", "y"]
+    },
+
+    // Easymotion
+    {
+      "before": ["<leader>", "j"],
+      "after": ["<leader>", "<leader>", "2", "s"]
+    }
+  ],
+
+  // MARK: Optional - This is my own preference for how the editor looks
 
   "files.eol": "\n", // LF by default
   "files.exclude": {
@@ -169,67 +270,108 @@
     "**/CVS": false,
     "**/Thumbs.db": false
   },
+  "files.simpleDialog.enable": true,
 
-  "zenMode.showTabs": "none",
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
+  "zenMode.showTabs": "single",
 
-  "workbench.editor.showTabs": "none",
-  "workbench.editor.editorActionsLocation": "titleBar",
   "workbench.activityBar.location": "top",
-  "workbench.tree.enableStickyScroll": false,
-  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.editor.customLabels.enabled": true,
+  "workbench.editor.customLabels.patterns": {
+    "**/core.*": "${dirname}/${filename}.${extname}",
+    "**/helpers.*": "${dirname}/${filename}.${extname}",
+    "**/index.*": "${dirname}/${filename}.${extname}"
+  },
+  "workbench.editor.empty.hint": "hidden",
   "workbench.editor.enablePreview": false,
-  "workbench.list.typeNavigationMode": "automatic",
-  "workbench.list.defaultFindMode": "highlight",
-  "workbench.sideBar.location": "right",
-  "workbench.colorTheme": "Kanagawa",
-  "workbench.secondarySideBar.showLabels": false,
+  "workbench.editor.showTabs": "single",
   "workbench.hover.delay": 300,
+  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.list.defaultFindMode": "highlight",
+  "workbench.list.smoothScrolling": true,
+  "workbench.list.typeNavigationMode": "automatic",
+  "workbench.panel.opensMaximized": "preserve",
+  "workbench.secondarySideBar.showLabels": false,
+  "workbench.sideBar.location": "right",
+  "workbench.tree.enableStickyScroll": true,
 
-  "editor.linkedEditing": true,
-  "editor.stickyScroll.enabled": false,
-  "editor.cursorSurroundingLines": 12,
-  "editor.lineNumbers": "relative",
-  "editor.fontFamily": "'Monaspace Argon', Menlo, 'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
-  "editor.inlineSuggest.fontFamily": "'Monaspace Krypton', monospace",
-  "editor.formatOnSave": true,
+  "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "editor.renderWhitespace": "all",
-  "editor.fontSize": 12,
-  "editor.minimap.enabled": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorSurroundingLines": 8,
+  "editor.fontFamily": "'Monaspace Argon', Menlo, 'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
+  "editor.fontSize": 11,
+  "editor.formatOnSave": true,
+  "editor.hover.delay": 300,
+  "editor.inlayHints.enabled": "off",
+  "editor.inlineSuggest.fontFamily": "'Monaspace Krypton', monospace",
+  "editor.lineNumbers": "on",
+  "editor.linkedEditing": true,
   "editor.minimap.showMarkSectionHeaders": true,
   "editor.minimap.showRegionSectionHeaders": true,
-  "editor.inlayHints.enabled": "off",
-  "editor.accessibilitySupport": "off",
-  "editor.hover.delay": 300,
+  "editor.minimap.size": "proportional",
+  "editor.renderWhitespace": "all",
+  "editor.smoothScrolling": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.wordWrap": "on",
+
+  "diffEditor.renderSideBySide": true,
+  "diffEditor.useInlineViewWhenSpaceIsLimited": true,
 
   "explorer.autoReveal": "focusNoScroll",
 
-  "terminal.integrated.fontSize": 12,
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.statusBarItem.enabled": true,
+
+  "debug.console.wordWrap": true,
+  "debug.console.fontSize": 11,
+
+  "chat.editor.wordWrap": "on",
+  "chat.editor.fontSize": 11,
+
+  "terminal.external.osxExec": "WezTerm.app",
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.enableImages": true,
-  "terminal.external.osxExec": "WezTerm.app",
+  "terminal.integrated.fontSize": 11,
+  "terminal.integrated.smoothScrolling": true,
 
   "search.useIgnoreFiles": false,
 
-  "window.openFoldersInNewWindow": "on",
   "window.confirmSaveUntitledWorkspace": false,
+  "window.density.editorTabHeight": "default",
+  "window.openFoldersInNewWindow": "on",
 
   "notebook.lineNumbers": "on",
+  "notebook.output.wordWrap": true,
 
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
 
-  "peacock.surpriseMeOnStartup": true,
   "peacock.affectActivityBar": false,
   "peacock.affectStatusBar": true,
   "peacock.affectTitleBar": false,
+  "peacock.surpriseMeOnStartup": true,
 
-  "vscode-pets.theme": "beach"
+  "vscode-pets.theme": "beach",
 
-  // MARK: === Other auto settings ===
+  "turboConsoleLog.addSemicolonInTheEnd": true,
+  "turboConsoleLog.includeFilename": true,
+  "turboConsoleLog.includeLineNum": true,
+  "turboConsoleLog.insertEmptyLineAfterLogMessage": true,
+  "turboConsoleLog.insertEmptyLineBeforeLogMessage": true,
+  "turboConsoleLog.insertEnclosingClass": true,
+  "turboConsoleLog.insertEnclosingFunction": true,
+  "turboConsoleLog.logMessagePrefix": "__TURBO__",
+  "turboConsoleLog.wrapLogMessage": true,
+
+  "github.copilot.nextEditSuggestions.enabled": true
+
+  // MARK: Other auto settings
+
   // ...
 }
