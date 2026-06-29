@@ -224,7 +224,7 @@
     "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
   },
   {
-    "key": "enter",
+    "key": "shift+r",
     "command": "renameFile",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
@@ -241,6 +241,11 @@
   {
     "key": "shift+k",
     "command": "list.expandSelectionUp",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "right",
+    "command": "list.select",
     "when": "listFocus && !inputFocus"
   },
 
@@ -285,13 +290,11 @@
     "key": "ctrl+shift+h",
     "command": "-workbench.action.replaceInFiles"
   },
-
   {
     "key": "escape",
     "command": "-editor.action.inlineSuggest.hide",
     "when": "inlineSuggestionVisible"
   },
-
   {
     "key": "alt+a",
     "command": "editor.action.inlineSuggest.commit",
@@ -321,5 +324,38 @@
   {
     "key": "ctrl+k ctrl+shift+p",
     "command": "workbench.action.openView"
+  },
+
+  // MARK: CHAT
+
+  {
+    "key": "ctrl+shift+i",
+    "command": "-workbench.action.chat.openagent",
+    "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "workbench.action.chat.openask",
+    "when": "!chatSetupDisabled && !chatSetupHidden"
+  },
+  {
+    "key": "ctrl+shift+alt+right",
+    "command": "editor.action.smartSelect.expand",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+right",
+    "command": "-editor.action.smartSelect.expand",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+left",
+    "command": "editor.action.smartSelect.shrink",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+left",
+    "command": "-editor.action.smartSelect.shrink",
+    "when": "editorTextFocus"
   }
 ]
